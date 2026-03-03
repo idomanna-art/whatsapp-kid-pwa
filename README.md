@@ -1,6 +1,4 @@
 # whatsapp-kid-pwa
-# WhatsApp Kids (PWA)
-
 ## Deploy on GitHub Pages
 1. Push everything to GitHub (main branch).
 2. GitHub -> Settings -> Pages
