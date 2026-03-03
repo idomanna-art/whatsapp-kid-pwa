@@ -1,4 +1,4 @@
-const CACHE = 'wk-cache-v1';
+const CACHE = 'wk-cache-v3';
 
 const CORE = [
   './',
@@ -26,10 +26,16 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Cache-first לכל קובץ שכבר נטען (כולל mp4)
 self.addEventListener('fetch', (event) => {
   const req = event.request;
   if (req.method !== 'GET') return;
+
+  const url = new URL(req.url);
+
+  // ✅ אל תתערב בוידאו וב-Range requests (זה שובר MP4)
+  if (req.headers.has('range') || url.pathname.endsWith('.mp4')) {
+    return; // נותן לדפדפן להביא ישירות מהשרת
+  }
 
   event.respondWith(
     caches.match(req).then(cached => {
@@ -38,7 +44,7 @@ self.addEventListener('fetch', (event) => {
         const copy = resp.clone();
         caches.open(CACHE).then(c => c.put(req, copy));
         return resp;
-      }).catch(() => cached);
+      });
     })
   );
 });
