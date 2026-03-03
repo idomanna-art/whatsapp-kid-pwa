@@ -1,0 +1,68 @@
+{
+  "app": {
+    "hangUpThresholdMs": 2000,
+    "answerProbability": 0.95,
+    "ringMinMs": 3000,
+    "ringMaxMs": 9000,
+    "noAnswerTimeoutMs": 10000
+  },
+  "contacts": [
+    {
+      "id": "1",
+      "name": "עידו מאנע",
+      "profilePic": "media/profiles/idoprofile.jpeg",
+      "angryVideo": "media/videos/ido/ido.mp4",
+      "defaultVideos": [
+        "media/videos/ido/ido.mp4",
+        "media/videos/ido/ido2.mp4"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "רומי מאנע",
+      "profilePic": "media/profiles/romyprofile.jpeg",
+      "angryVideo": "media/videos/romi/romi.mp4",
+      "defaultVideos": [
+        "media/videos/romi/romi.mp4",
+        "media/videos/romi/romi2.mp4",
+        "media/videos/romi/romi3.mp4"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "עודד בן עמי",
+      "profilePic": "media/profiles/odedbenami.webp",
+      "angryVideo": "media/videos/oded/odedbenamishalom.mp4",
+      "defaultVideos": [
+        "media/videos/oded/odedbenamishalom.mp4"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "יובל המבולבל",
+      "profilePic": "media/profiles/yuvalhamebulbal.jpg",
+      "angryVideo": "media/videos/yuval/abayuval.mp4",
+      "defaultVideos": [
+        "media/videos/yuval/abayuval.mp4"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "עזרי פלג",
+      "profilePic": "media/profiles/ezriprofile.jpeg",
+      "angryVideo": "media/videos/ezri/ezri1.mp4",
+      "defaultVideos": [
+        "media/videos/ezri/ezri1.mp4",
+        "media/videos/ezri/ezri2.mp4",
+        "media/videos/ezri/ezri3.mp4",
+        "media/videos/ezri/ezri4.mp4",
+        "media/videos/ezri/ezri5.mp4",
+        "media/videos/ezri/ezri6.mp4",
+        "media/videos/ezri/ezri7.mp4",
+        "media/videos/ezri/ezri8.mp4",
+        "media/videos/ezri/ezri9.mp4",
+        "media/videos/ezri/ezri10.mp4"
+      ]
+    }
+  ]
+}
