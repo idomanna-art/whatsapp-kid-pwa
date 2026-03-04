@@ -35,13 +35,19 @@ function randInt(min, max){
 }
 
 function pickVideo(contact){
-  if (hungLog[contact.id]) return contact.angryVideo;
+  // אם יש דגל "כועס" — נקרין פעם אחת ואז נכבה אותו
+  if (hungLog[contact.id]) {
+    hungLog[contact.id] = false;
+    saveJSON(LS_HUNG, hungLog);
+    return contact.angryVideo;
+  }
 
   let options = [...contact.defaultVideos];
   if (options.length > 1 && lastPlayed[contact.id]) {
     options = options.filter(v => v !== lastPlayed[contact.id]);
     if (options.length === 0) options = [...contact.defaultVideos];
   }
+
   const chosen = options[Math.floor(Math.random() * options.length)];
   lastPlayed[contact.id] = chosen;
   saveJSON(LS_LAST, lastPlayed);
