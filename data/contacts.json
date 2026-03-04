@@ -11,7 +11,7 @@
       "id": "1",
       "name": "עידו מאנע",
       "profilePic": "media/profiles/idoprofile.jpeg",
-      "angryVideo": "media/videos/ido/ido.mp4",
+      "angryVideo": "media/videos/ido/ido_angry.mp4",
       "defaultVideos": [
         "media/videos/ido/ido.mp4",
         "media/videos/ido/ido2.mp4"
