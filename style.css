@@ -54,6 +54,10 @@ html,body{
   justify-content:center;
   padding-top: max(0px, env(safe-area-inset-top));
   gap:10px;
+
+  /* ✅ כדי שהמסך "Ringing" יהיה מעל הווידאו */
+  position:relative;
+  z-index:2000;
 }
 .big-avatar{
   width:130px; height:130px; border-radius:50%;
@@ -64,23 +68,27 @@ html,body{
 
 /* Video */
 .call-video{
-  position:absolute;
+  /* ✅ הווידאו מכסה את כל המסך */
+  position:fixed;
   inset:0;
   width:100%;
   height:100%;
   background:#000;
 
-  /* ✅ תמיד להראות את כל הוידאו בלי חיתוך */
+  /* ✅ בלי חיתוך פרצופים */
   object-fit:contain;
 
-  /* שלא יתפוס קליקים (כפתור ניתוק מעליו) */
+  /* ✅ חשוב: הווידאו מתחת לכפתור הניתוק */
+  z-index:1000;
+
+  /* שלא יתפוס קליקים */
   pointer-events:none;
 }
 
-/* נשאר כדי לא לשבור קוד קיים */
+/* להשאיר תאימות אם הקוד מוסיף class contain */
 .call-video.contain{ object-fit:contain; }
 
-/* ✅ חשוב: לא להסתיר עם display:none כדי שהוידאו יישאר "חי" */
+/* ✅ לא להסתיר עם display:none */
 .hidden{
   opacity:0;
   pointer-events:none;
@@ -88,8 +96,11 @@ html,body{
 
 /* Hang up */
 .controls{
-  position:absolute;
+  /* ✅ הכפתור תמיד מעל הווידאו */
+  position:fixed;
   inset:0;
+  z-index:3000;
+
   display:flex;
   align-items:flex-end;
   justify-content:center;
