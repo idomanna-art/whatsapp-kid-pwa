@@ -69,10 +69,22 @@ html,body{
   width:100%;
   height:100%;
   background:#000;
-  object-fit:cover; /* default */
+
+  /* ✅ תמיד להראות את כל הוידאו בלי חיתוך */
+  object-fit:contain;
+
+  /* שלא יתפוס קליקים (כפתור ניתוק מעליו) */
+  pointer-events:none;
 }
+
+/* נשאר כדי לא לשבור קוד קיים */
 .call-video.contain{ object-fit:contain; }
-.hidden{ display:none; }
+
+/* ✅ חשוב: לא להסתיר עם display:none כדי שהוידאו יישאר "חי" */
+.hidden{
+  opacity:0;
+  pointer-events:none;
+}
 
 /* Hang up */
 .controls{
